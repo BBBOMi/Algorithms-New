@@ -15,7 +15,10 @@ public class Main_49b {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> words = new HashMap<>();
         for(String s : strs) {
-            words.getOrDefault(getKey(s), new ArrayList<>()).add(s);
+            String key = getKey(s);
+            List<String> value = words.getOrDefault(key, new ArrayList<>());
+            value.add(s);
+            words.put(key, value);
         }
         return new ArrayList<>(words.values());
     }
