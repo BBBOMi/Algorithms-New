@@ -26,7 +26,7 @@ public class Main_64065 {
                     temp += str.charAt(j);
                 }
                 if (str.charAt(j) == ',' || j == str.length() - 1) {
-                    if (temp != "") {
+                    if (!temp.equals("")) {
                         set.add(temp);
                         temp = "";
                     }
