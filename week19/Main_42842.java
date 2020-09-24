@@ -1,4 +1,4 @@
-package me.algo.programmers;
+package me.algo.week19;
 
 import java.util.ArrayList;
 import java.util.List;
