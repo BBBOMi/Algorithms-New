@@ -12,13 +12,15 @@ import kotlin.collections.ArrayList
  * Used Data structure : List(ArrayList)
  */
 
-class Goorm43218 {
-    private val MAX_SIZE = 10
-    private val OVERFLOW = "overflow"
-    private val UNDERFLOW = "underflow"
+private const val PUSH_OPERATION = 0
+private const val POP_OPERATION = 1
 
-    private val PUSH_OPERATION = 0
-    private val POP_OPERATION = 1
+private const val MAX_SIZE = 10
+
+private const val OVERFLOW = "overflow"
+private const val UNDERFLOW = "underflow"
+
+class Goorm43218 {
     fun main(args: Array<String>) {
         val sc = Scanner(System.`in`)
         val maxCount: Int = sc.nextInt()
