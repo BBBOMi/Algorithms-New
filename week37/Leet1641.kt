@@ -10,21 +10,23 @@ package me.algo.week37
  */
 
 class Leet1641 {
-    // 1 + 1 + 1 + 1 + 1 = 5
-    // 5 + 4 + 3 + 2 + 1 = 15
-    // 15 + 10 + 6 + 3 + 1 = 35
-    // 35 + 20 + 10 + 4 + 1 = 70
+    /*
+        u   o   i   e   a
+        1 + 1 + 1 + 1 + 1 = 5
+        1 + 2 + 3 + 4 + 5 = 15
+        1 + 3 + 6 + 10 + 15 = 35
+        1 + 4 + 10 + 20 + 35 = 70
+     */
     private val vowelsCount = 5
 
     fun countVowelStrings(n: Int): Int {
-        val matrix = Array<IntArray>(n + 1) { IntArray(vowelsCount) }
+        val matrix = Array<IntArray>(n + 1) { IntArray(vowelsCount + 1) }
         matrix[1].fill(1)
+        matrix[1][0] = 0
 
         for (i in 2..n) {
-            var sum = 0
-            for (j in (vowelsCount - 1) downTo 0) {
-                sum += matrix[i - 1][j]
-                matrix[i][j] = sum
+            for (j in 1..vowelsCount) {
+                matrix[i][j] = matrix[i - 1][j] + matrix[i][j - 1]
             }
         }
         return matrix[n].sum()
