@@ -4,7 +4,7 @@ import java.util.*
 
 /**
  * Created by Bomi on 2021/02/02.
- * 문제 출처 : https://leetcode.com/problems/merge-k-sorted-lists/submissions/
+ * 문제 출처 : https://leetcode.com/problems/merge-k-sorted-lists/
  *
  * Time Complexity : O(N)
  * Used Algorithm : Heap

@@ -2,7 +2,7 @@ package me.algo.week38
 
 /**
  * Created by Bomi on 2021/02/05.
- * 문제 출처 : https://leetcode.com/problems/check-if-all-1s-are-at-least-length-k-places-away/solution/
+ * 문제 출처 : https://leetcode.com/problems/check-if-all-1s-are-at-least-length-k-places-away/
  *
  * Time Complexity : O(N)
  * Used Algorithm : Array
