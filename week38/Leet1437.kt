@@ -17,7 +17,7 @@ class Leet1437 {
     fun kLengthApart(nums: IntArray, k: Int, currentIndex: Int, step: Int): Boolean {
         if (currentIndex >= nums.size) return true
         if (nums[currentIndex] == 0) return kLengthApart(nums, k, currentIndex + 1, step + 1)
-        return if (step < k) return false
+        return if (step < k) false
         else kLengthApart(nums, k, currentIndex + 1, 0)
     }
 }

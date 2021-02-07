@@ -20,12 +20,10 @@ class Leet23 {
         val ascendingList = PriorityQueue<Int>()
 
         lists.forEach {
-            it.let {
-                var node = it
-                while (node != null) {
-                    ascendingList.add(node.`val`)
-                    node = node.next
-                }
+            var node = it
+            while (node != null) {
+                ascendingList.add(node.`val`)
+                node = node.next
             }
         }
 
