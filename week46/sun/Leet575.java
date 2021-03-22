@@ -1,7 +1,6 @@
 package me.algo.week46.sun;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 /**
  * Created by Bomi on 2021/03/22.
@@ -9,11 +8,11 @@ import java.util.stream.Collectors;
  *
  * Time Complexity : O(N)
  * Used Algorithm : 자료구조
- * Used Data structure : Set(HashSet), Array
+ * Used Data structure : Array
  */
 
 public class Leet575 {
     public int distributeCandies(int[] candyType) {
-        return Math.min(Arrays.stream(candyType).boxed().collect(Collectors.toSet()).size(), candyType.length / 2);
+        return (int) Math.min(Arrays.stream(candyType).distinct().count(), candyType.length / 2);
     }
 }
