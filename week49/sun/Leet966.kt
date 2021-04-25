@@ -11,32 +11,28 @@ package me.algo.week49.sun
  */
 
 class Leet966 {
-    private lateinit var originWords: MutableSet<String>
-    private lateinit var lowerCaseWords: MutableMap<String, String>
-    private lateinit var withoutVowelsWords: MutableMap<String, String>
+    private val originWords: MutableSet<String> = mutableSetOf()
+    private val lowerCaseWords: MutableMap<String, String> = mutableMapOf()
+    private val withoutVowelsWords: MutableMap<String, String> = mutableMapOf()
 
     private val EMPTY_STRING = ""
 
     fun spellchecker(wordlist: Array<String>, queries: Array<String>): Array<String> {
-        originWords = mutableSetOf()
-        lowerCaseWords = mutableMapOf()
-        withoutVowelsWords = mutableMapOf()
+        wordlist.forEach {
+            originWords.add(it)
 
-        for (word in wordlist) {
-            originWords.add(word)
-
-            val lowerCase = word.toLowerCase()
-            lowerCaseWords.putIfAbsent(lowerCase, word)
+            val lowerCase = it.toLowerCase()
+            lowerCaseWords.putIfAbsent(lowerCase, it)
 
             val withoutVowels = removeVowels(lowerCase)
-            withoutVowelsWords.putIfAbsent(withoutVowels, word)
+            withoutVowelsWords.putIfAbsent(withoutVowels, it)
         }
         return findWords(queries)
     }
 
     private fun findWords(queries: Array<String>): Array<String> {
         val answer = arrayOfNulls<String>(queries.size)
-        for (i in 0 until queries.size) {
+        for (i in queries.indices) {
             answer[i] = find(queries[i])
         }
         return answer.requireNoNulls()

@@ -49,7 +49,7 @@ class Leet417 {
         if (visited[currentX][currentY] || heights[currentX][currentY] < preHeight) return
 
         visited[currentX][currentY] = true
-        for (i in 0 until dx.size) {
+        for (i in dx.indices) {
             dfs(heights, visited, preHeight, currentX + dx[i], currentY + dy[i])
         }
     }

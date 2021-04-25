@@ -10,7 +10,7 @@ package me.algo.week49.sun
  */
 
 class Leet923 {
-    private val MOD = 1000_000_000 + 7
+    private val MOD = 1_000_000_000 + 7
 
     fun threeSumMulti(arr: IntArray, target: Int): Int {
         val countMap = mutableMapOf<Int, Int>()

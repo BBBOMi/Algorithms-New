@@ -9,9 +9,7 @@ package me.algo.week49.sun
  * Used Data structure : Array, List(ArrayList)
  */
 class Leet916 {
-    private companion object {
-        private const val ALPHABET_COUNT = 26
-    }
+    private val ALPHABET_COUNT = 26
 
     fun wordSubsets(A: Array<String>, B: Array<String>): List<String?> {
         val bMax = IntArray(ALPHABET_COUNT)
@@ -23,20 +21,21 @@ class Leet916 {
         }
 
         val answer = mutableListOf<String>()
-        search@ for (a in A) {
-            val aCount = count(a)
+        A.forEach {
+            val aCount = count(it)
             for (i in 0 until ALPHABET_COUNT) {
-                if (aCount[i] < bMax[i]) continue@search
+                if (aCount[i] < bMax[i]) return@forEach
             }
-            answer.add(a)
+            answer.add(it)
         }
+
         return answer
     }
 
     private fun count(S: String): IntArray {
         val counts = IntArray(ALPHABET_COUNT)
-        for (c in S.toCharArray()) {
-            counts[c - 'a']++
+        S.toCharArray().forEach {
+            counts[it - 'a']++
         }
         return counts
     }
