@@ -1,5 +1,8 @@
 package me.algo.week70
 
+import java.util.LinkedList
+import java.util.Queue
+
 /**
  * Created by Bomi on 2022/01/16.
  * 문제 출처 : https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
@@ -11,7 +14,7 @@ package me.algo.week70
 
 class Leet1752 {
     fun check(nums: IntArray): Boolean {
-      val queue: Queue<Int> = nums.toCollection(LinkedList<Int>())
+      val queue: Queue<Int> = nums.toCollection(LinkedList())
       nums.sort()
 
       var count = nums.size
